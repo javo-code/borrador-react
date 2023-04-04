@@ -7,7 +7,7 @@ const ItemList = ( { products } ) => {
         products.length > 0 &&
         products.map((product) => {
           return (
-         <Item key={product.id} product={product}/>
+        <Item key={product.id} product={product}/>
           )
         })
       }

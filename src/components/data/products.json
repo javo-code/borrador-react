@@ -2,7 +2,7 @@
   {
     "id": 1,
     "category":"nutrition",
-    "img": "https://www.google.com.ar/imgres?imgurl=https%3A%2F%2Fthefoodtech.com%2Fwp-content%2Fuploads%2F2022%2F03%2Fnutricion-activa.jpg&tbnid=ABqSKAPWqRE59M&vet=12ahUKEwjQ2qKe7o7-AhVJr5UCHWUpBioQMygCegUIARDmAQ..i&imgrefurl=https%3A%2F%2Fthefoodtech.com%2Fnutricion-y-salud%2Fnutricion-activa-asi-se-vera-influenciado-este-sector%2F&docid=9VtMLkxw28MvxM&w=750&h=400&q=nutricion&authuser=0&ved=2ahUKEwjQ2qKe7o7-AhVJr5UCHWUpBioQMygCegUIARDmAQ",
+    "img": "assets/nutrilon.jpg",
     "name": "Nutrilon",
     "description": " Pote x 1000 grs.",
     "price": "9.000"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "category":"nutrition",
-    "img": "../assets/ensure.jpg",
+    "img": "assets/ensure.jpg",
     "name": "Ensure",
     "description": " Pote x 1000 grs.",
     "price": "9.000"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "category":"nutrition",
-    "img": "../assets/lactoproteyn.jpg",
+    "img": "assets/lactoproteyn.jpg",
     "name": "Lactoproteyn",
     "description": " Pote x 1000 grs.",
     "price": "7.000"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "category":"nutrition",
-    "img": "../assets/alfare.jpg",
+    "img": "assets/alfare.jpg",
     "name": "Alfare",
     "description": " Pote x 1000 grs.",
     "price": "10.000"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "category":"nutrition",
-    "img": "../assets/fresubin.jpg",
+    "img": "assets/fresubin.jpg",
     "title": "Fresubin",
     "description": " Pote x 1000 grs.",
     "price": "9.500"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "category":"nutrition",
-    "img": "../assets/alterna.jpg",
+    "img": "assets/alterna.jpg",
     "name": "Alterna",
     "description": " Pote x 1000 grs.",
     "price": "10.200"
