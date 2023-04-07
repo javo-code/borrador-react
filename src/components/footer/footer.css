@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.copyright, .redes  {
+display: flex;
+justify-content: space-around;
+}
