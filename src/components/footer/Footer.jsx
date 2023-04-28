@@ -1,6 +1,6 @@
-import fbIcon from './facebook.jpg'
-import igIcon from './instagram.jpg'
-import twIcon from './twitter.jpg'
+import fbIcon from '../../img/facebook.jpg'
+import igIcon from '../../img/instagram.jpg'
+import twIcon from '../../img/twitter.jpg'
 import './footer.css';
   
 function Footer() {

@@ -1,0 +1,61 @@
+.card-container {
+    display: inline-block;
+    width: fit-content;
+    margin: 1em;
+    box-shadow: 5px 5px 5px grey;
+    background-color: #fff;
+}
+
+.card-container:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+    box-shadow: 2px 3px 3px black;
+}
+
+.card-container p {
+    padding: 3% 2% 0 6%;
+}
+
+.card-container .ItemFooter{
+display: flex;
+justify-content: center;
+}
+
+.BtnVerDetalle {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #09ba09;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.Info-price{
+border-top: 1px solid rgb(206, 204, 204);    
+}
+
+p{
+    font-size: 14px;
+}
+
+footer .ItemFooter {
+    margin-top: -20px;
+}
+
+.ItemFooter button {
+    padding: 5%;
+}
+
+.card-container .ItemFooter{
+    padding: 5%;
+}
+
+.BtnCard{
+    text-decoration: none;
+    color: #fff;
+}
+
+.BtnCard:hover {
+    color: #fff;
+}

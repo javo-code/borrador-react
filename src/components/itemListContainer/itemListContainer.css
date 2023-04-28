@@ -3,38 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*
-#bdbdbd;
 
-
-*/
 body {
-    background-color: rgb(244, 244, 244);
+background-color: rgb(244, 244, 244);
 }
 
-.itemList-container{
-    width: 100%;
+.ItemListContainer{
+    display: flex;
+    justify-content: center;
 }
-
-.card-container{
-    display: inline-block;
-    width: fit-content;
-}
-
-.card-img-container{
-width: fit-content;
-}
-
-/* estilos greeting */
 
 h1 {
-    height: 100px;
+    height: 100px ;
     display: flex;
     justify-content: center;
     color: rgb(255, 132, 0);
     font-size: 5.5em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 5%;
+    padding: 1% 0 6.5% 0;
 }
 
 .bounce-in-bck {

@@ -1,35 +1,28 @@
-import logo from './logo.png';
-import './navBar.css'
-import '../cartWidget/Contador'
-import CartWidget from '../cartWidget/CartWidget'
-import Contador from '../cartWidget/Contador';
+import logo from '../../img/logo.png';
+import './navBar.css';
+import './Contador';
+import CartWidget from '../cartWidget/CartWidget';
+import Contador from './Contador';  
+import { NavLink, Link } from 'react-router-dom';
 
-function NavBar() {
+const NavBar = () => {
   return (
-    <nav className='navBar'>
-
-      <div className='contenedor-logo' >
+    <nav className='NavBar'>
+      <Link to='/'>
         <img
           className='logo'
           src={logo}
-          alt='logo nueva medicina'
-        />
-      </div>
-
-      <div className='contenedor-navBar' >
-        <ul class='menu'>
-          <li><a href='#nutricion'>NUTRICION</a></li>
-          <li><a href='#bombas'>BOMBAS DE INFUSION</a></li>
-          <li><a href='#descartables'>DESCARTABLES</a></li>
-          <li><a href='#descartables'>INGRESAR</a></li>
-        </ul>
-        
+          alt='logo nueva medicina' />
+      </Link> 
+      <div className="Categories">
+        <NavLink to={`/category/nutrition`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Nutrición Enteral</NavLink>
+        <NavLink to={`/category/deponsables`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Artículos Descartales</NavLink>
+        <NavLink to={`/category/bombs`} className={({isActive})=> isActive ? 'ActiveOption':'Option'}>Bombas de Infusón</NavLink>
       </div>
       <CartWidget />
       <Contador />
-    </nav>
+</nav>
   )
 } 
 
 export default NavBar;
-

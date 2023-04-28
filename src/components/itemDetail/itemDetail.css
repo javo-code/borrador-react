@@ -1,0 +1,31 @@
+
+.CardItemDetailContainer {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 2em;
+    padding: 2em;
+    box-shadow: 5px 5px 5px grey;
+    background-color: #fff;
+    }
+
+
+.CardItemDetailHeader{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.CardItemDetailImg {
+height: fit-content;
+}
+
+.InfoDescriptionDetail {
+    max-width: 200px;
+}
+
+.CardItemFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

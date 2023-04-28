@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor-botones-card .controlesCard{
+display: flex;
+justify-content: center;
+}
+
+.controlesCard{
+  background-color: #fff;
+  gap:30%
+}
+
+.controlesCard button {
+  font-size: 1.5em;
+  
+}
+
+.btn-minus, .btn-plus{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+}
+
+.btn-minus{
+    color: red;
+  }
+
+.btn-plus{
+  padding-top: 1%;
+  color: #09ba09;
+}
+
+.number{
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-btnAddToCart{
+  width:fit-content;
+  margin-top: 10%;
+  justify-content: center;
+}
+
+
+
+.btn-addToCart{
+  width: 15em;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(255, 132, 0);
+  padding: 4%;
+  gap: 3%;
+  cursor: pointer;
+}
+
+.btn-addToCart:hover{
+  transform: scale(1.1);
+    transition: 0.8s;
+      box-shadow: 2px 3px 3px black;
+}
+
+.cart{
+  width: 40px;
+  height: 40px;
+}
