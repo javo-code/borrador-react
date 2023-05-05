@@ -13,6 +13,12 @@ background-color: rgb(244, 244, 244);
     justify-content: center;
 }
 
+.Loading {display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 3%;
+}
+
 h1 {
     height: 100px ;
     display: flex;

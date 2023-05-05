@@ -16,9 +16,9 @@
     padding: 3% 2% 0 6%;
 }
 
-.card-container .ItemFooter{
-display: flex;
-justify-content: center;
+.card-container .ItemFooter {
+    display: flex;
+    justify-content: center;
 }
 
 .BtnVerDetalle {
@@ -27,15 +27,15 @@ justify-content: center;
     background-color: #09ba09;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
-.Info-price{
-border-top: 1px solid rgb(206, 204, 204);    
+.Info-price {
+    border-top: 1px solid rgb(206, 204, 204);
 }
 
-p{
+p {
     font-size: 14px;
 }
 
@@ -47,15 +47,15 @@ footer .ItemFooter {
     padding: 5%;
 }
 
-.card-container .ItemFooter{
+.card-container .ItemFooter {
     padding: 5%;
 }
 
-.BtnCard{
+.BtnCard {
     text-decoration: none;
     color: #fff;
 }
 
 .BtnCard:hover {
-    color: #fff;
+    color: none;
 }

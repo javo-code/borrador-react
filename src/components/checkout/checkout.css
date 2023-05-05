@@ -1,0 +1,10 @@
+.CheckoutBackgorund{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.SeccEnConstruccion {
+    width: 60%;
+    padding: 1%;
+}

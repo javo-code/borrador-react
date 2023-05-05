@@ -1,28 +1,28 @@
 import "./itemDetail.css";
 import ItemCount from "../itemCount/ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../context/CartContext"; 
 
-const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+const ItemDetail = ({ id, name, img, description, price, stock }) => {
   const [quantityAdded, setQuantityAdded] = useState(0)
   
-  const { addItem } = useState(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity)
 
-    const item = {
+  const item = {
       id, name, price
     }
 
-    addItem(item, quantity);
+  addItem(item, quantity);
   }
 
   return (
     <article className="CardItemDetailContainer ">
-      <header className="CardItemDetailHeader ItemHeader">
-        <h2 className="CardItemDetailHeader ItemHeader">
+      <header className="CardItemDetailHeader">
+        <h2 className="CardItemDetailHeader">
           {name}
         </h2>
       </header>
@@ -30,9 +30,6 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
         <img src={img} alt={name} className="CardItemDetailImg" />
       </picture>
       <section>
-        <p className="InfoCategoryDetail">
-          <b>Categoria:</b> {category}
-        </p>
         <p className="InfoDescriptionDetail">
           <b>Descripción:</b> {description}
         </p>
@@ -43,7 +40,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
       <footer className="CardItemFooter">
         {
           quantityAdded > 0 ? (
-            <Link to='/cart' className='Option'>Terminar compra</Link>
+            <Link to='/cart' className='Option'>Continuar con la compra</Link>
           ) : (
             <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
           )

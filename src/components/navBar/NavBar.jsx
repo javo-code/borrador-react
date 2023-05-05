@@ -1,8 +1,6 @@
 import logo from '../../img/logo.png';
 import './navBar.css';
-import './Contador';
 import CartWidget from '../cartWidget/CartWidget';
-import Contador from './Contador';  
 import { NavLink, Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -17,10 +15,9 @@ const NavBar = () => {
       <div className="Categories">
         <NavLink to={`/category/nutrition`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Nutrición Enteral</NavLink>
         <NavLink to={`/category/deponsables`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Artículos Descartales</NavLink>
-        <NavLink to={`/category/bombs`} className={({isActive})=> isActive ? 'ActiveOption':'Option'}>Bombas de Infusón</NavLink>
+        <NavLink to={`/category/bombs`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Bombas de Infusión</NavLink>
       </div>
       <CartWidget />
-      <Contador />
 </nav>
   )
 } 

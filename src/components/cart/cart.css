@@ -1,2 +1,5 @@
-
-
+.CheckoutLink{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
