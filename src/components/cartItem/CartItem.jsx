@@ -71,7 +71,7 @@ const CartItem = ({ id, img, name, price, quantity, category }) => {
                 <div className="col-xs-12 col-md-4">
                   <div className="col-md-4 mb-2">
                     <Link
-                      to="/checkoutform"
+                      to="/checkout"
                       className="btn btn-info btn-block btn-kepBuying"
                     >
                       Finalizar Compra

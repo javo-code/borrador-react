@@ -80,7 +80,7 @@ const CartModal = () => {
                 </Link>
               </div>
               <div className="link-to-checkoutForm">
-                <Link to="/checkoutform">
+                <Link to="/checkout">
                   <button className="checkout-btn btn btn-info btn-block btn-kepBuying">
                     Finalizar compra
                   </button>

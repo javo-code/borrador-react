@@ -1,61 +1,38 @@
-import { useContext, useState } from 'react';
-import CartContext from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
 
-const CheckoutForm = () => {
-  const { isReadyToCheckout, clearCart } = useContext(CartContext);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    confirmEmail: ''
-  });
+  const CheckoutForm = ({ onConfirm })=> {
+    const [name, setName] = useState ('')
+    const [phone, setPhone] = useState ('')
+    const [email, setEmail] = useState('')
+    
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    clearCart();
-  };
+  const handleConfirm = (event) => {
+    event.preventDefault()
+    
+    const userData = {
+      name, phone, email
+    }
+        onConfirm(userData);
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
+  }
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="firstName">Nombre:</label>
-      <input type="text" name="firstName" onChange={handleInputChange} />
-
-      <label htmlFor="lastName">Apellido:</label>
-      <input type="text" name="lastName" onChange={handleInputChange} />
-
-      <label htmlFor="phone">Teléfono:</label>
-      <input type="text" name="phone" onChange={handleInputChange} />
-
-      <label htmlFor="email">E-mail:</label>
-      <input type="email" name="email" onChange={handleInputChange} />
-
-      <label htmlFor="confirmEmail">Confirmar E-mail:</label>
-      <input type="email" name="confirmEmail" onChange={handleInputChange} />
-
-      <button type="submit" disabled={!isReadyToCheckout}>
-        <Link to='/checkout'>
-                <button className='checkout-btn btn btn-info btn-block btn-kepBuying'>Realizar compra</button>
-              </Link>
-      </button>
-
-      <div>
-        <p>Nombre: {formData.firstName}</p>
-        <p>Apellido: {formData.lastName}</p>
-        <p>Teléfono: {formData.phone}</p>
-        <p>E-mail: {formData.email}</p>
-        <p>Confirmar E-mail: {formData.confirmEmail}</p>
-      </div>
-    </form>
-  );
-};
+    <div className="Container">
+      <form onSubmit={handleConfirm} className='Form'>
+        <label htmlFor="name" className="Label">
+          <input className='Input' type="text" value={name} onChange={({ target }) => setName(target.value)} />
+        </label>
+        <label htmlFor="phone" className="Label">
+          <input className='Input' type="text" value={phone} onChange={({ target }) => setPhone(target.value)} />
+        </label>
+        <label htmlFor="email" className="Label">
+          <input className='Input' type="text" value={email} onChange={({ target }) => setEmail(target.value)} />
+        </label>
+        <div className="label">
+          <button type='submit' className='Button'>Crear Orden</button>
+        </div>
+      </form>
+    </div>
+  )
+}
 
 export default CheckoutForm;
