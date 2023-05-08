@@ -10,10 +10,10 @@ const CartWidget = () => {
   const totalItems = cart.reduce((acc, { quantity }) => acc + quantity, 0);
 
   return (
-    <div className='Cartwidget'>
+    <div className='Cartwidget' style={{ display: cart.length > 0 ? 'block' : 'none' }}>
       <Link to='/CartModal'>
         <img src={CarritoIco} alt="" className='CartwidgetImg'/>
-        <span className='Counter' style={{ display: totalItems > 0 ? 'block' : 'none' }}>
+        <span className='Counter'>
           {totalItems}
         </span>
       </Link>

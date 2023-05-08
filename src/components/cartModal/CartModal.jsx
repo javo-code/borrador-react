@@ -1,66 +1,91 @@
-import { useContext, useState } from 'react';
-import { CartContext } from '../context/CartContext';
-import { Link, useLocation } from 'react-router-dom';
-import { FaTrash } from 'react-icons/fa';
-import './cartModal.css';
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
+import { FaTrash } from "react-icons/fa";
+import "./cartModal.css";
 
 const CartModal = () => {
   const { cart, clearCart, removeItem } = useContext(CartContext);
-  const [previousLocation, setPreviousLocation] = useState(null);
 
-  const cartTotal = cart.reduce((acc, { quantity, price }) => acc + quantity * price, 0);
+  const cartTotal = cart.reduce(
+    (acc, { quantity, price }) => acc + quantity * price,
+    0
+  );
 
   const handleCloseModal = () => {
-    const modal = document.querySelector('.cart-modal');
-    modal.style.display = 'none';
-  };
-
-  const location = useLocation();
-
-  const handleCartClick = () => {
-    setPreviousLocation(location);
+    const modal = document.querySelector(".cart-modal");
+    modal.style.display = "none";
   };
 
   return (
-    <div className='cart-modal'>
-      <div className='cart-modal-content'>
-        <div className='cart-modal-header'>
+    <div className="cart-modal">
+      <div className="cart-modal-content">
+        <div className="cart-modal-header">
           <h2>Carrito de compras</h2>
-          <button className='close-btn' onClick={handleCloseModal}>
-            <Link to={previousLocation || '/cart'}>X</Link>
+          <button className="close-btn" onClick={handleCloseModal}>
+            <Link to="/cart">X</Link>
           </button>
         </div>
-        <div className='cart-modal-items'>
+        <div className="cart-modal-items">
           {cart.length === 0 ? (
-            <p>No hay productos en el carrito</p>
+            <>
+              <p>No hay productos en el carrito</p>
+              <Link to="/">
+                <button className="checkout-btn btn btn-success btn-block btn-kepBuying">
+                  Ir a comprar
+                </button>
+              </Link>
+            </>
           ) : (
-            cart.map(({ id, title, image, price, quantity }) => (
-              <div key={id} className='cart-item'>
-                <img src={image} alt={title} />
-                <div className='cart-item-info'>
-                  <h3>{title}</h3>
-                  <p>Cantidad: {quantity}</p>
-                  <p>Precio unitario: ${price}</p>
-                  <button className='remove-btn' onClick={() => removeItem(id)}>
-                    <FaTrash />
-                  </button>
+            cart.map(({ id, name, img, price, quantity }) => (
+              <div key={id} className="cart-item col-12 d-flex container">
+                <img src={img} alt={name} className="img-CartModal col-6" />
+                <div className="cart-item-info">
+                  <h3 className="h3-CartModal">{name}</h3>
+                  <p className="p-CartModal">
+                    <b>Cantidad:</b> {quantity}
+                  </p>
+                  <p className="p-CartModal">
+                    <b>Precio unitario: $</b>
+                    {price}
+                  </p>
                 </div>
+                <button
+                  className="remove-btn btn-delete col-1"
+                  onClick={() => removeItem(id)}
+                >
+                  <FaTrash />
+                </button>
               </div>
             ))
           )}
         </div>
         {cart.length > 0 && (
-          <div className='cart-modal-footer'>
-            <div className='cart-modal-total'>
-              <p>Total: ${cartTotal.toFixed(2)}</p>
+          <div className="cart-modal-footer">
+            <div className="cart-modal-total Total">
+              <h3 className="Total">Total: ${cartTotal.toFixed(2)}</h3>
             </div>
-            <div className='cart-modal-buttons'>
-              <button className='clear-cart-btn' onClick={() => clearCart()}>
-                Limpiar carrito
-              </button>
-              <Link to='/checkout'>
-                <button className='checkout-btn'>Finalizar compra</button>
-              </Link>
+            <div className="cart-modal-buttons">
+              <div className="BtnClearCart">
+                <button onClick={() => clearCart()} className="Button">
+                  Limpiar el carrito
+                </button>
+              </div>
+              <div className="col-md-4 mb-2">
+                <Link
+                  to="/"
+                  className="btn btn-success btn-block btn-kepBuying"
+                >
+                  Seguir comprando
+                </Link>
+              </div>
+              <div className="link-to-checkoutForm">
+                <Link to="/checkoutform">
+                  <button className="checkout-btn btn btn-info btn-block btn-kepBuying">
+                    Finalizar compra
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         )}
@@ -70,74 +95,3 @@ const CartModal = () => {
 };
 
 export default CartModal;
-
-
-/* import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
-import './cartModal.css';
-
-const CartModal = () => {
-const { cart, removeItem, clearCart } = useContext(CartContext);
-
-const handleRemoveItem = (id) => {
-removeItem(id);
-};
-
-const handleClearCart = () => {
-clearCart();
-};
-
-return (
-<div className="cartModal">
-<h2>Carrito de Compras</h2>
-{cart.length === 0 ? (
-<p>No hay productos en el carrito</p>
-) : (
-<>
-<ul>
-{cart.map(({ id, title, quantity }) => (
-<li key={id}>
-<span>{title}</span>
-<span>Cantidad: {quantity}</span>
-<button onClick={() => handleRemoveItem(id)}>Eliminar</button>
-</li>
-))}
-</ul>
-<div className="cartModal__actions">
-<button onClick={handleClearCart}>Limpiar Carrito</button>
-<button>Finalizar Compra</button>
-</div>
-</>
-)}
-</div>
-);
-};
-
-export default CartModal; */
-
-/* import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
-
-const CartModal = () => {
-  const { cart } = useContext(CartContext);
-
-  return (
-    <div className="cart-modal">
-      <ul>
-        {cart.map((item) => (
-          <li key={item.id}>
-            <span>{item.name} - </span>
-            <span>Cantidad: {item.quantity} - </span>
-            <span>Precio: ${item.price * item.quantity}</span>
-          </li>
-        ))}
-        <li>
-          <span>Total: </span>
-          <span>${cart.reduce((acc, item) => acc + item.price * item.quantity, 0)}</span>
-        </li>
-      </ul>
-    </div>
-  );
-};
-
-export default CartModal; */

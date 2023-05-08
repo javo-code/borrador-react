@@ -6,7 +6,8 @@ import NavBar from './components/navBar/NavBar';
 import Footer from './components/footer/Footer';
 import Cart from './components/cart/Cart';
 import { CartProvider } from './components/context/CartContext'; 
-import Checkout from './components/checkout/Checkout.';
+import Checkout from './components/checkout/Checkout';
+import CheckoutForm from './components/checkoutForm/CheckoutForm';
 import CartModal from './components/cartModal/CartModal';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/cartModal' element={<CartModal />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/checkoutform' element={<CheckoutForm />} />
           <Route path='*' element={<h1>404 NOT FOUND</h1>} />
         </Routes>
       </CartProvider>
