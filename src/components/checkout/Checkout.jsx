@@ -20,7 +20,7 @@ const Checkout = () => {
           name, phone, email
         },
         items: cart,
-        total: totalPrice,
+        price: totalPrice(),
         date: Timestamp.fromDate(new Date())
       }
         const batch = writeBatch(db);
@@ -47,14 +47,12 @@ const Checkout = () => {
           } else { 
             outOfStock.push({ id: doc.id, ...dataDoc})
           }
-
         })
 
         if (outOfStock.length === 0) {
           await batch.commit()
 
           const orderRef = collection(db, 'orders');
-
           const orderAdded = await addDoc(orderRef, objOrder);
 
           setOrderId(orderAdded.id);
@@ -87,4 +85,4 @@ const Checkout = () => {
   )
 }
 
-export default Checkout;
+export default Checkout;  
